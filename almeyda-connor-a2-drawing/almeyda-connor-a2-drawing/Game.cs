@@ -11,8 +11,8 @@ namespace MohawkGame2D
     public class Game
     {
         // Place your variables here:
+        // Random Colors
         Color Colored = Random.Color();
-
         /// <summary>
         ///     Setup runs once before the game loop begins.
         /// </summary>
@@ -28,80 +28,85 @@ namespace MohawkGame2D
         /// </summary>
         public void Update()
         {
-            DrawEye(50, 50, 25);
+            DrawEye(50, 50, 25,225,50,69);
+            DrawEye(200, 200, 50,35,67,88);
+            DrawEye(70, 325, 75,125,60,80);
+            DrawEye(300, 300, 50,0,0,0);
         }
-        
-        void DrawEye(int x,int y,float r)
+
+        void DrawEye(int x, int y, float r, int red, int blue, int green)
         {
             // Draws the eyeball
-            Draw.FillColor=(Color.White);
+            Draw.FillColor = (Color.White);
             Draw.Circle(x, y, r);
-            Draw.FillColor = Colored;
-            if (Input.GetMouseX()>x+x/10)
-            {
-                if (Input.GetMouseY() > y+10)
+            Color Colored = new Color(red, green, blue);
+            Draw.FillColor = (Colored);
+            if (Input.GetMouseX() > x + x / r)
                 {
-                    Draw.Circle(x + x / 10, y+y/10, r / 2);
+                    if (Input.GetMouseY() > y + y / r)
+                    {
+                        Draw.Circle(x + x / r, y + y / r, r / 2);
+                    }
+                    else if (Input.GetMouseY() < y - y / r)
+                    {
+                        Draw.Circle(x + x / r, y - y / r, r / 2);
+                    }
+                    else
+                    {
+                        Draw.Circle(x + x / r, y, r / 2);
+                    }
                 }
-                else if (Input.GetMouseY() < y - 10)
+                else if (Input.GetMouseX() < x - x / r)
                 {
-                    Draw.Circle(x + x / 10, y - y / 10, r / 2);
+                    if (Input.GetMouseY() > y + y / r)
+                    {
+                        Draw.Circle(x - x / r, y + y / r, r / 2);
+                    }
+                    else if (Input.GetMouseY() < y - y / r)
+                    {
+                        Draw.Circle(x - x / r, y - y / r, r / 2);
+                    }
+                    else
+                    {
+                        Draw.Circle(x - x / r, y, r / 2);
+                    }
+                }
+                else if (Input.GetMouseY() > y + y / r)
+                {
+                    if (Input.GetMouseY() > x + x / r)
+                    {
+                        Draw.Circle(x + x / r, y + y / r, r / 2);
+                    }
+                    else if (Input.GetMouseY() < x - x / r)
+                    {
+                        Draw.Circle(x - x / r, y + y / r, r / 2);
+                    }
+                    else
+                    {
+                        Draw.Circle(x - x / r, y + y / r, r / 2);
+                    }
+                }
+                else if (Input.GetMouseY() < y - y / r)
+                {
+                    if (Input.GetMouseY() > x + x / r)
+                    {
+                        Draw.Circle(x + x / r, y - y / r, r / 2);
+                    }
+                    else if (Input.GetMouseY() < x - x / r)
+                    {
+                        Draw.Circle(x - x / r, y - y / r, r / 2);
+                    }
+                    else
+                    {
+                        Draw.Circle(x - x / r, y - y / r, r / 2);
+                    }
                 }
                 else
                 {
-                    Draw.Circle(x + x / 10, y, r / 2);
+                    Draw.Circle(x, y, r / 1.5f);
                 }
             }
-            else if (Input.GetMouseX() < x-x/10)
-            {
-                if (Input.GetMouseY() > y + y/10)
-                {
-                    Draw.Circle(x-x/10, y + y / 10, r / 2);
-                }
-                else if (Input.GetMouseY() < y - y/10)
-                {
-                    Draw.Circle(x-x/10, y - y / 10, r / 2);
-                }
-                else
-                {
-                    Draw.Circle(x-x/10, y, r / 2);
-                }
-            }
-            else if (Input.GetMouseY() > y + y/10)
-            {
-                if (Input.GetMouseY() > x + x/10)
-                {
-                    Draw.Circle(x + x / 10, y + y / 10, r / 2);
-                }
-                else if (Input.GetMouseY() < x - x/10)
-                {
-                    Draw.Circle(x - x / 10, y + y / 10, r / 2);
-                }
-                else
-                {
-                    Draw.Circle(x - x/10, y + y / 10, r / 2);
-                }
-            }
-            else if (Input.GetMouseY() < y-y/10)
-            {
-                if (Input.GetMouseY() > x + x/10)
-                {
-                    Draw.Circle(x + x / 10, y-y/10, r / 2);
-                }
-                else if (Input.GetMouseY() < x - x/10)
-                {
-                    Draw.Circle(x - x / 10, y - y / 10, r / 2);
-                }
-                else
-                {
-                    Draw.Circle(x - x/10, y - y / 10, r / 2);
-                }
-            }
-            else
-            {
-                Draw.Circle(x, y, r/1.5f);
-            }
-        }
+        
 
         
         
