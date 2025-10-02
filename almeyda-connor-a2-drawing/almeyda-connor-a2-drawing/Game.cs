@@ -12,13 +12,13 @@ namespace MohawkGame2D
     {
         // Place your variables here:
         // Index of Eye Positions 
-        int[] xOfEye = { 50, 200, 70, 300, 350};
-        int[] yOfEye = { 50, 200, 325, 300, 50 };
-        float[] rOfEye = { 25, 50, 60, 50, 35};
+        int[] xOfEye = { 50, 200, 70, 300, 350, 350, 196, 50};
+        int[] yOfEye = { 50, 200, 325, 300, 50, 203, 42, 225 };
+        float[] rOfEye = { 25, 50, 60, 50, 35, 50, 43, 33};
         // Index of Colour Bases
-        int[] red = { 99, 203, 161, 0, 218};
-        int[] green = { 127, 137, 202, 0, 38};
-        int[] blue = { 25, 103, 241, 0, 46};
+        int[] red = { 99, 203, 161, 0, 218, 252, 117, 77};
+        int[] green = { 127, 137, 202, 0, 38, 208, 0, 161};
+        int[] blue = { 25, 103, 241, 0, 46, 0, 250, 250};
         // Colour Customization
         int redOffSet = 0;
         int greenOffSet = 0;
