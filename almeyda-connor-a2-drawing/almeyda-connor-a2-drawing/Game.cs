@@ -12,13 +12,13 @@ namespace MohawkGame2D
     {
         // Place your variables here:
         // Index of Eye Positions 
-        int[] xOfEye = { 50, 200, 70, 300, 350, 350, 196, 50};
-        int[] yOfEye = { 50, 200, 325, 300, 50, 203, 42, 225 };
-        float[] rOfEye = { 25, 50, 60, 50, 35, 50, 43, 33};
+        int[] xOfEye = { 50, 200, 70, 300, 350, 350, 200, 50, 180};
+        int[] yOfEye = { 50, 200, 325, 300, 50, 203, 40, 225, 340 };
+        float[] rOfEye = { 25, 50, 60, 50, 35, 50, 40, 30, 40};
         // Index of Colour Bases
-        int[] red = { 99, 203, 161, 0, 218, 252, 117, 77};
-        int[] green = { 127, 137, 202, 0, 38, 208, 0, 161};
-        int[] blue = { 25, 103, 241, 0, 46, 0, 250, 250};
+        int[] red = { 99, 203, 161, 0, 218, 252, 117, 77, 255};
+        int[] green = { 127, 137, 202, 0, 38, 208, 0, 161, 165};
+        int[] blue = { 25, 103, 241, 0, 46, 0, 250, 250, 10};
         // Colour Customization
         int redOffSet = 0;
         int greenOffSet = 0;
@@ -176,7 +176,7 @@ namespace MohawkGame2D
                     Draw.Circle(x - x / r, y - y / r, r / 2);
                 }
             }
-            else
+            else 
             {
                 Draw.Circle(x, y, r / 1.5f);
             }
