@@ -35,24 +35,24 @@ namespace MohawkGame2D
             Window.SetSize(400, 400);
             Window.SetTitle("Eye Follower");
             Window.ClearBackground(Random.Color());
-            // Shape for Background Triangles
+            // Background Triangle Generator
             for (int i = 0; i < Random.Integer(2, 9); i++)
             {
-                // Triangle Side Size Randomization
+                // Triangle Size and Colour Randomization
                 float x1 = Random.Float(0, 400);
                 float x2 = Random.Float(0, 400);
                 float x3 = Random.Float(0, 400);
                 float y1 = Random.Float(0, 400);
                 float y2 = Random.Float(0, 400);
                 float y3 = Random.Float(0, 400);
-                // Random Colour
                 Draw.FillColor = (Random.Color());
                 // Triangle Maker
                 Draw.Triangle(x1, y1, x2, y2, x3, y3);
             }
+            // Backrgound Quadrulateral Generator
             for (int i = 0; i < Random.Integer(2, 9); i++)
             {
-                // Triangle Side Size Randomization
+                // Quad Size and Colour Randomization
                 float x1 = Random.Float(0, 400);
                 float x2 = Random.Float(0, 400);
                 float x3 = Random.Float(0, 400);
@@ -61,9 +61,8 @@ namespace MohawkGame2D
                 float y2 = Random.Float(0, 400);
                 float y3 = Random.Float(0, 400);
                 float y4 = Random.Float(0, 400);
-                // Random Colour
                 Draw.FillColor = (Random.Color());
-                // Triangle Maker
+                // Quad Maker
                 Draw.Quad(x1, y1, x2, y2, x3, y3, x4,y4);
             }
         }
@@ -108,14 +107,16 @@ namespace MohawkGame2D
             }
         }
 
+        // Eyeball Maker
         void DrawEye(int x, int y, float r)
         {
-            // Draws the eyeball
             Draw.FillColor = (Color.White);
             Draw.Circle(x, y, r);
             }
+        // Iris Maker
         void DrawIris(int x, int y, float r)
         {
+
             if (Input.GetMouseX() > x + x / r)
             {
                 if (Input.GetMouseY() > y + y / r)
